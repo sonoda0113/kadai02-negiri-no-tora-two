@@ -1,0 +1,180 @@
+/* ===== リセット・ベース ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #1a1a1a;
+  color: #eee;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== 画面切り替え ===== */
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ===== タイトル画面 ===== */
+#screen-title {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#screen-title h1 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+#screen-title p {
+  margin-bottom: 32px;
+  line-height: 1.8;
+  color: #aaa;
+}
+
+/* ===== ラウンド表示 ===== */
+#round-label {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 12px;
+}
+
+/* ===== ステージ（背景＋キャラクター） ===== */
+.stage {
+  position: relative;       /* 子要素の基準点にする */
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* 横4:縦3の比率を維持 */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* 背景画像：ステージ全体を埋める */
+#bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* 比率を保ちながら全体を覆う */
+}
+
+/* キャラクター画像：右下に配置 */
+#matchan-img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: auto;             /* ステージの高さの90% */
+  object-fit: contain;
+  transition: opacity 0.2s; /* 画像切り替え時にフェード */
+}
+
+/* ===== 吹き出し ===== */
+.reaction-box {
+  background: #fff8e1;
+  border: 1px solid #f0c040;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  min-height: 56px;
+  color: #333;
+}
+
+.reaction-box p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===== 商品情報 ===== */
+.product-box {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.product-box h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.product-box p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.product-box strong {
+  color: #f0c040;
+}
+
+/* ===== 入力エリア ===== */
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  background: #2a2a2a;
+  border: 1px solid #555;
+  border-radius: 6px;
+  color: #eee;
+}
+
+/* ===== ボタン共通 ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background: #c8a040;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover { background: #e0b850; }
+
+/* ===== エラー文 ===== */
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-bottom: 8px;
+  min-height: 20px;
+}
+
+/* ===== 結果画面 ===== */
+.result-box {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.result-img {
+  width: 160px;
+  margin-bottom: 16px;
+}
+
+.result-box h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.result-box p {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 8px;
+  line-height: 1.8;
+}
+
+#result-score {
+  font-size: 20px;
+  color: #f0c040;
+  font-weight: bold;
+  margin-bottom: 24px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>値切りの虎</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 画面1：タイトル -->
+  <div id="screen-title" class="screen active">
+    <h1>値切りの虎</h1>
+    <p>まっちゃんと値段交渉！<br>なるべく安く買え！</p>
+    <button onclick="startGame()">ゲームスタート</button>
+  </div>
+
+  <!-- 画面2：商談 -->
+  <div id="screen-game" class="screen">
+
+    <p id="round-label"></p>
+
+    <!-- 背景＋キャラクターのラッパー -->
+    <div class="stage">
+      <img id="bg-img" src="images/bg_shichifukudo.png" alt="七福堂">
+      <img id="matchan-img" src="images/matchan_normal.png" alt="まっちゃん">
+    </div>
+
+    <!-- まっちゃんの吹き出し -->
+    <div class="reaction-box">
+      <p id="reaction-text">金額を提示してください</p>
+    </div>
+
+    <!-- 商品情報 -->
+    <div class="product-box">
+      <h2 id="product-name"></h2>
+      <p id="product-desc"></p>
+      <p>参考相場：<strong id="product-hint"></strong></p>
+    </div>
+
+    <!-- 入力エリア -->
+    <div id="input-area">
+      <p id="error-msg" class="error"></p>
+      <input type="number" id="price-input" placeholder="金額を入力（例：30000）" min="1">
+      <button onclick="propose()">この金額で提示する</button>
+    </div>
+
+    <!-- 次へボタン（成立・決裂後に表示） -->
+    <div id="next-area" style="display:none">
+      <button onclick="nextRound()">次の商品へ</button>
+    </div>
+
+  </div>
+
+  <!-- 画面3：結果 -->
+  <div id="screen-result" class="screen">
+    <div class="result-box">
+      <img src="images/matchan_normal.png" alt="まっちゃん" class="result-img">
+      <h2>交渉終了！</h2>
+      <p id="result-text"></p>
+      <p id="result-score"></p>
+      <button onclick="startGame()">もう一度遊ぶ</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
